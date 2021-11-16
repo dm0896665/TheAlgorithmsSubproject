@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.caleb;
 
 /**
  * The trinomial triangle is a variation of Pascal’s triangle. The difference

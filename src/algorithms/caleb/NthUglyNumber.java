@@ -15,7 +15,7 @@
 
 
 
-package algorithms;
+package algorithms.caleb;
 import java.util.*;
 class NthUglyNumber {
     /* Function to get the nth ugly number*/

@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.caleb;
 
 import java.util.TreeMap;
 
