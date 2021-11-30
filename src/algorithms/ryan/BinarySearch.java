@@ -1,4 +1,4 @@
-package com.thealgorithms.searches;
+package algorithms.ryan;
 
 import static java.lang.String.format;
 
@@ -6,11 +6,9 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
-import com.thealgorithms.devutils.searches.SearchAlgorithm;
 
 /**
  * Binary search is one of the most popular algorithms The algorithm finds the
- * position of a target value within a sorted array
  *
  * <p>
  * Worst-case performance O(log n) Best-case performance O(1) Average
@@ -21,7 +19,7 @@ import com.thealgorithms.devutils.searches.SearchAlgorithm;
  * @see SearchAlgorithm
  * @see IterativeBinarySearch
  */
-class BinarySearch implements SearchAlgorithm {
+class BinarySearch {
 
     /**
      * @param array is an array where the element should be found
@@ -29,7 +27,6 @@ class BinarySearch implements SearchAlgorithm {
      * @param <T> is any comparable type
      * @return index of the element
      */
-    @Override
     public <T extends Comparable<T>> int find(T[] array, T key) {
         return search(array, key, 0, array.length);
     }

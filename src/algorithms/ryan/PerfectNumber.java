@@ -1,4 +1,4 @@
-package com.thealgorithms.maths;
+package algorithms.ryan;
 
 /**
  * In number theory, a perfect number is a positive integer that is equal to the

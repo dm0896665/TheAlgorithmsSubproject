@@ -1,4 +1,4 @@
-package com.thealgorithms.maths;
+package algorithms.ryan;
 
 import java.util.Arrays;
 

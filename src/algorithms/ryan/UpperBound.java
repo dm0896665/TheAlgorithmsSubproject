@@ -1,12 +1,10 @@
-package com.thealgorithms.searches;
+package algorithms.ryan;
 
 import static java.lang.String.format;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
-import com.thealgorithms.devutils.searches.SearchAlgorithm;
-
 /**
  * The UpperBound method is used to return an index pointing to the first
  * element in the range [first, last) which has a value greater than val, or the
@@ -25,7 +23,7 @@ import com.thealgorithms.devutils.searches.SearchAlgorithm;
  * @see SearchAlgorithm
  * @see BinarySearch
  */
-class UpperBound implements SearchAlgorithm {
+class UpperBound {
 
     // Driver Program
     public static void main(String[] args) {
@@ -65,7 +63,7 @@ class UpperBound implements SearchAlgorithm {
      * @param <T> is any comparable type
      * @return index of the UpperBound element
      */
-    @Override
+ 
     public <T extends Comparable<T>> int find(T[] array, T key) {
         return search(array, key, 0, array.length - 1);
     }

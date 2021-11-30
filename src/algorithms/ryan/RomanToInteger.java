@@ -1,4 +1,4 @@
-package com.thealgorithms.conversions;
+package algorithms.ryan;
 
 import java.util.*;
 
