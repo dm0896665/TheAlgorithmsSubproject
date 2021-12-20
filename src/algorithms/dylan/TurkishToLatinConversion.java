@@ -1,5 +1,6 @@
 package algorithms.dylan;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -18,7 +19,13 @@ public class TurkishToLatinConversion {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input the string: ");
         String b = sc.next();
-        System.out.println("Converted: " + convertTurkishToLatin(b));
+        StringBuilder str = new StringBuilder();
+        char ch[] = b.toCharArray();
+        for(int i = 0; i < ch.length; i++) {
+           String hexString = Integer.toHexString(ch[i]);
+           str.append("0x" + hexString.toUpperCase() + ",");
+        }
+        System.out.println("Converted: " + convertTurkishToLatin(str.toString()));
         sc.close();
     }
 
@@ -29,14 +36,18 @@ public class TurkishToLatinConversion {
      * @return String
      */
     public static String convertTurkishToLatin(String param) {
-        char[] turkishChars
-                = new char[]{0x131, 0x130, 0xFC, 0xDC, 0xF6, 0xD6, 0x15F, 0x15E, 0xE7, 0xC7, 0x11F, 0x11E};
+        String[] turkishChars
+                = new String[]{"0x131", "0x130", "0xFC", "0xDC", "0xF6", "0xD6", "0x15F", "0x15E", "0xE7", "0xC7", "0x11F", "0x11E"};
         char[] latinChars = new char[]{'i', 'I', 'u', 'U', 'o', 'O', 's', 'S', 'c', 'C', 'g', 'G'};
-        for (int i = 0; i < turkishChars.length; i++) {
-            param
-                    = param.replaceAll(
-                            new String(new char[]{turkishChars[i]}), new String(new char[]{latinChars[i]}));
+        StringBuilder latin = new StringBuilder();
+        String[] paramArr = param.split(",");
+        for (int i = 0; i < paramArr.length; i++) {
+        	if(Arrays.asList(turkishChars).indexOf(paramArr[i]) > 0) {
+        		latin.append(latinChars[Arrays.asList(turkishChars).indexOf(paramArr[i])]);
+        	} else {
+        		latin.append(paramArr[i]);
+        	}
         }
-        return param;
+        return latin.toString();
     }
 }
